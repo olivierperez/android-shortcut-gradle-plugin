@@ -21,7 +21,7 @@ In this example you'll need copy your shortcuts.xml in two folder **dev** and **
 ## Example
 1. Create shortcuts.xml (or name it how you want) and put it in your project. **Do not** set any android:targetPackage.
 
-  ```xml
+```xml
   <shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
       <shortcut android:shortcutId="test1" android:enabled="true" android:icon="@mipmap/ic_launcher"
           android:shortcutShortLabel="@string/app_name" android:shortcutLongLabel="@string/app_name"
@@ -33,11 +33,11 @@ In this example you'll need copy your shortcuts.xml in two folder **dev** and **
           <categories android:name="android.shortcut.conversation" />
       </shortcut>
   </shortcuts>
-  ```
+```
   
 2. Apply **android-shortcut-gradle-plugin**.
 
-  ```gradle
+```gradle
 buildscript {
       repositories {
           jcenter()
@@ -49,18 +49,21 @@ buildscript {
 
 apply plugin: 'com.android.application'
 apply plugin: 'com.github.zellius.shortcut-helper'
-    ```
+```
+
 3. Set path to your shortcuts.xml.
 
-  ```gradle
-   shortcutHelper.filePath = '../shortcuts.xml'
-   ```
+```gradle
+shortcutHelper.filePath = '../shortcuts.xml'
+```
+
 4. Set shortcuts.xml in your manifest. 
 
-   ```xml
-    <meta-data android:name="android.app.shortcuts"
-               android:resource="@xml/shortcuts" />
-    ```
+```xml
+<meta-data android:name="android.app.shortcuts"
+           android:resource="@xml/shortcuts" />
+```
+
 Android Studio can mark @xml/shortcuts as "cannot resolve"...but it is ok :)
 5. PROFIT!!!!
 
